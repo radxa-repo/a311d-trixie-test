@@ -12,7 +12,7 @@ jobs:
     - name: "Checkout rsdk"
       uses: "actions/checkout@v6"
       with:
-        ref: "40f9df085606563478ff1aa4f08d0759a81fc084"
+        ref: "f893c043a7e76e9a4dff6e6ba65f48168b604e8a"
         repository: "RadxaOS-SDK/rsdk"
     - name: "Checkout current repo"
       uses: "actions/checkout@v6"
@@ -45,10 +45,13 @@ jobs:
         export PATH="$APTLY_PATH:$PATH"
         
         cat << EOF | gpg --import
+        ${{ secrets.RADXA_APT_KEY_2024 }}
+        EOF
+        cat << EOF | gpg --import
         ${{ secrets.GPG_KEY }}
         EOF
         cat << EOF | gpg --import
-        ${{ secrets.RADXA_APT_KEY_2024 }}
+        ${{ secrets.RADXA_APT_KEY_2026 }}
         EOF
         
         suites=(

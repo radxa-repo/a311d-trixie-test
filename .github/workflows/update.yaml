@@ -14,13 +14,15 @@ jobs:
       with:
         script: |
           const secrets = JSON.parse(process.env.SECRETS);
-          if (secrets.GPG_KEY === undefined || secrets.RADXA_APT_KEY_2024 === undefined) {
+          if (secrets.RADXA_APT_KEY_2024 === undefined ||
+              secrets.GPG_KEY === undefined ||
+              secrets.RADXA_APT_KEY_2026 === undefined) {
               core.setFailed('Required secrets are unset!');
           }
     - name: "Checkout rsdk"
       uses: "actions/checkout@v6"
       with:
-        ref: "40f9df085606563478ff1aa4f08d0759a81fc084"
+        ref: "f893c043a7e76e9a4dff6e6ba65f48168b604e8a"
         repository: "RadxaOS-SDK/rsdk"
     - name: "Checkout current repo"
       uses: "actions/checkout@v6"

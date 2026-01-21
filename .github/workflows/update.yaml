@@ -22,7 +22,7 @@ jobs:
     - name: "Checkout rsdk"
       uses: "actions/checkout@v6"
       with:
-        ref: "f893c043a7e76e9a4dff6e6ba65f48168b604e8a"
+        ref: "81864f2181cd6849030fa2131660c3aa219455e6"
         repository: "RadxaOS-SDK/rsdk"
     - name: "Checkout current repo"
       uses: "actions/checkout@v6"
